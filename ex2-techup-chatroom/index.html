@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
   <meta charset="UTF-8" />
@@ -14,7 +14,22 @@
 </head>
 
 <body>
-  <!-- Start coding here -->
+  <header class="site-header">Techup Chatroom</header>
+  <main class="chatroom" aria-label="แชต Techup">
+    <section class="message-group message-group--outgoing" aria-label="ข้อความที่ส่ง">
+      <div class="message message--green">สวัสดีจ้า</div>
+      <div class="message message--gray message--dismissible">
+        <span>Coding สนุกจังเลย</span>
+        <button class="dismiss-button" type="button" aria-label="ปิดข้อความ">x</button>
+      </div>
+      <div class="message message--green">🥳 😍</div>
+    </section>
+
+    <section class="message-group message-group--incoming" aria-label="ข้อความที่ได้รับ">
+      <div class="message message--gray">😍</div>
+      <div class="message message--gray">🥳</div>
+    </section>
+  </main>
 </body>
 
 </html>

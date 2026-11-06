@@ -1,1 +1,126 @@
-/* Start coding here */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #fff;
+  font-family: "Sarabun", sans-serif;
+}
+
+.site-header {
+  height: 60px;
+  padding: 8px 10px;
+  background: #888;
+  color: #fff;
+  font-family: "Times New Roman", serif;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.chatroom {
+  position: relative;
+  min-height: calc(100vh - 60px);
+}
+
+.message-group {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message-group--outgoing {
+  top: 35px;
+  right: 20px;
+}
+
+.message-group--incoming {
+  top: 198px;
+  left: 20px;
+}
+
+.message {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 210px;
+  height: 44px;
+  padding: 0 15px;
+  border-radius: 24px;
+  font-size: 14px;
+}
+
+.message--green {
+  background: #00c900;
+}
+
+.message--green:first-child::after {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  width: 0;
+  height: 0;
+  border-top: 12px solid #00c900;
+  border-left: 8px solid transparent;
+  content: "";
+}
+
+.message--gray {
+  position: relative;
+  background: #888;
+}
+
+.message-group--outgoing .message--gray {
+  background: #e7e4e4;
+}
+
+.message--dismissible {
+  justify-content: space-between;
+}
+
+.dismiss-button {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  display: grid;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 50%;
+  background: #c4c4c4;
+  color: #fff;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    height: 48px;
+    font-size: 22px;
+  }
+
+  .chatroom {
+    min-height: calc(100vh - 48px);
+  }
+
+  .message-group--outgoing {
+    right: 12px;
+  }
+
+  .message-group--incoming {
+    left: 12px;
+  }
+
+  .message {
+    width: min(210px, 42vw);
+    height: 40px;
+    padding: 0 12px;
+  }
+}
